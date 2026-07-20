@@ -30,6 +30,23 @@ for resultado in tabla:
     print(resultado)
     
 #Intento iterar a fin de verificar si se lanza la excepcion cuando no ya se ha superado el limite de multiplicadores   
-print(next(tabla))
+#print(next(tabla))
 
-    
+""" TAREA GENERADORES"""
+
+def generador_potencias(limite):
+    exponente = 1
+    while exponente <= limite:
+        # yield calcula 2 elevado al exponente actual y lo "entrega"
+        yield 2 ** exponente
+        exponente += 1
+
+generador_potencias(6)   
+
+# 
+potencias = generador_potencias(4)
+
+#Recorremos el generador con un ciclo for
+print("Potencias de 2:")
+for potencia in potencias:
+    print(potencia)
