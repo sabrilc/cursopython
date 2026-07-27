@@ -1,0 +1,5 @@
+numero,tipo,precio,capacidad,disponible
+1,simple,20,1,True
+2,doble,35,2,True
+3,suite,40,1,True
+4,simple,20,1,True
