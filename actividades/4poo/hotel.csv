@@ -1,5 +1,5 @@
-numero,tipo,precio,capacidad,disponible
-1,simple,20,1,True
-2,doble,35,2,True
-3,suite,40,1,True
-4,simple,20,1,True
+numero,tipo,precio,capacidad,disponible,cliente,fecha_ingreso, fecha_salida,dias_reservado,costo_total
+1,simple,35.0,2,True,,,,,
+2,doble,35.0,2,True,,,,,
+3,simple,35.0,2,True,,,,,
+4,suite,35.0,2,False,,2026-10-10 00:00:00,2026-10-17 00:00:00,,294.0
