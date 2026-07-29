@@ -1,5 +1,5 @@
-numero,tipo,precio,capacidad,disponible,cliente,fecha_ingreso, fecha_salida,dias_reservado,costo_total
-1,simple,35.0,2,True,,,,,
+numero,tipo,precio,capacidad,disponible,cliente,fecha_ingreso,fecha_salida,dias_reservado,costo_total
+1,simple,35.0,2,False,ENOC ABRIL RUIZ,2026-07-29 00:00:00,2026-07-30 00:00:00,1,35.0
 2,doble,35.0,2,True,,,,,
 3,simple,35.0,2,True,,,,,
 4,suite,35.0,2,False,,2026-10-10 00:00:00,2026-10-17 00:00:00,,294.0

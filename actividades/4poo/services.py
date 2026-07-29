@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime
 
-from clases import Habitacion, Reserva, ErrorFormatoFecha
+from clases import Habitacion, Reserva, HabitacionNoDisponibleError, DatosInvalidosError ,ReservaNoEncontradaError, FechaInvalidaError
 
 class HotelService:
     def iniciar_atencion(self):
@@ -74,13 +74,15 @@ class HotelService:
                           fecha_salida=fecha_salida,
                           costo_total=0)
 
-        reserva.confirmar_reserva()        
+        reserva.confirmar_reserva()     
+        logging.info(f"Se creo la reserva en la habitacion{habitacion['numero']} para el cliente {huesped} dias totales {numero_noches} fecha de ingreso {  fecha_ingreso}")   
 
 
     def pantalla_cancelar_reserva(self):
         Reserva.mostrar_reservas()
         reserva = self.obtener_reserva()       
         Reserva.cancelar_reserva(reserva=reserva)
+        logging.info(f"Se cancelo la reserva en la habitacion numero {reserva.get("numero")}")
       
 
     def obtener_habitacion_disponible(self):
@@ -92,13 +94,12 @@ class HotelService:
                     print(f"La habitacion numero('{numero}') no existe")
                     continue
                 if habitacion['disponible']== False:
-                        print("La habitacion seleccionada esta Ocupada") 
-                        continue
+                    raise HabitacionNoDisponibleError                        
                 return habitacion
 
-            except ValueError as error:
+            except Exception as error:
                 logging.warn(error)
-                print("Debe ingresar un número de habitacion")
+                print(error)
 
     def obtener_reserva(self):
         while True:
@@ -109,13 +110,12 @@ class HotelService:
                     print(f"La habitacion numero('{numero}') no existe")
                     continue
                 if habitacion['disponible']== True:
-                        print("La reserva no existe") 
-                        continue
+                        raise ReservaNoEncontradaError                        
                 return habitacion
 
-            except ValueError as error:
+            except Exception as error:
                 logging.warn(error)
-                print("Debe ingresar un número de habitacion")
+                print(error)
 
     
 
@@ -133,11 +133,10 @@ class HotelService:
             try:
                 huesped = str( input("Ingrese le nombre del huesped: "))
                 if len(huesped.strip()) < 3:
-                    print("El nombre del huesped debe tener minimo 3 caracteres")
-                    continue
+                    raise DatosInvalidosError
                 return huesped
-            except ValueError as error:
-                logging.warn(error)
+            except Exception as error:
+                logging.critical(error)
                 print("Debe ingresar un nombre de huesped valido")
 
     def leer_numero_noches(self):
@@ -168,8 +167,8 @@ class HotelService:
 
                 return fecha_ingreso, fecha_salida
 
-            except ErrorFormatoFecha as error:
-                logging.warn(error)
+            except FechaInvalidaError as error:
+                logging.error(error)
                 print(error)
 
             

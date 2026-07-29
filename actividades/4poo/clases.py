@@ -169,8 +169,19 @@ class Reserva:
                     f"{habitacion['costo_total']}   "                  
                 )
 
-class ErrorFormatoFecha(ValueError):
+class FechaInvalidaError(ValueError):
     def __str__(self):
         return "la fecha ingresado no esta con el formato(dd/mm/yyyy)"
-    
+
+
+class DatosInvalidosError(ValueError):
+    def __str__(self):
+        return "El dato ingresado no es valido"
+
+class HabitacionNoDisponibleError(ValueError):
+    def __str__(self):
+        return "La habitacion seleccionada no esta disponible"
+class ReservaNoEncontradaError(ValueError):
+    def __str__(self):
+        return "La reserva ingresado no exite"
             
