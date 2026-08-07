@@ -1,0 +1,16 @@
+1. Histograma de Edades: Las edades de los estudiantes van de 17 a 32 años, con un promedio de 24.5 años. La mayoría de los estudiantes tiene entre 22 y 28 años.
+
+2. Estudiantes por Ciudad: Guayaquil y Ambato son las ciudades con más estudiantes (120 cada una), seguidas de Cuenca. Santo Domingo e Ibarra tienen la menor cantidad.
+
+3. Distribución por Modalidad: Las tres modalidades están balanceadas. La híbrida es la más usada (34%), seguida de virtual (33.5%) y presencial (32.4%).
+
+4. Promedio por Facultad: Ingeniería (7.94) y Administración (7.92) tienen los mejores promedios. Ciencias (7.55) y Salud (7.71) están ligeramente por debajo.
+
+5. Estado Académico: La mayoría de estudiantes (457) tiene estado Regular, 330 están Condicional y solo 215 son Excelente. Hay más estudiantes en riesgo que destacados.
+
+6. Distribución del Promedio: El promedio general es 7.78, con valores entre 5.5 y 10. La mayoría de estudiantes se concentra entre 7 y 8.5, es decir, notas regulares.
+
+7. Promedio vs Asistencia: Se observa una relación directa: a mayor asistencia suelen verse promedios más altos. Los estudiantes Excelente están en la zona alta de ambos ejes, mientras los Condicional se reparten con baja asistencia y promedio.
+
+8. Estudiantes por Carrera: Marketing (102) es la carrera con más estudiantes, seguida de Enfermería (91) y Medicina (90). Las carreras de salud concentran gran parte del alumnado.
+
